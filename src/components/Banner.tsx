@@ -2,7 +2,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { useRouter } from 'next/navigation';
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 
 export default function Banner() {
     const covers = [
@@ -14,8 +14,8 @@ export default function Banner() {
     const [index, setIndex] = useState(0)
     const router = useRouter();
 
-    const { data: session } = useSession()
-    console.log(session?.user.token);
+    // const { data: session } = useSession()
+    // console.log(session?.user.token);
     
     return (
       //add top shadow
@@ -28,7 +28,7 @@ export default function Banner() {
               <a className="font-medium hover:underline hover:cursor-pointer" href="/booking">จองฉีดวัคซีนได้แล้ววันนี้</a>
           </div>
           {
-            session ? <div className='absolute top-0 right-0 z-10 mt-2 mr-5 text-white'>Welcome {session.user?.name}</div> : null
+            // session ? <div className='absolute top-0 right-0 z-10 mt-2 mr-5 text-white'>Welcome {session.user?.name}</div> : null
           }
           <div className='absolute bottom-0 right-0 z-10 mb-2 mr-2'>
             <button 
