@@ -6,10 +6,9 @@ import { useRouter } from 'next/navigation';
 
 export default function Banner() {
     const covers = [
-      '/img/cover.jpg',
-      '/img/cover2.jpg',
-      '/img/cover3.jpg',
-      '/img/cover4.jpg',
+      '/cover1.png',
+      '/cover2.png',
+      '/cover3.jpg'
     ]
     const [index, setIndex] = useState(0)
     const router = useRouter();
@@ -42,7 +41,7 @@ export default function Banner() {
             </button>
           </div>
           <Image 
-              src={covers[index % 4]}
+              src={covers[index % 3]}
               alt="cover"
               className="object-cover"
               fill={true}
