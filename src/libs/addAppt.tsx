@@ -1,5 +1,5 @@
 export default async function addAppt (uid: string, cid: string, apptDate: string, token: string) {
-    const response = await fetch(`https://presentation-day-1-888bike-n7uafgjbi-vetozer6417s-projects.vercel.app/api/v1/companies/${cid}/appointments`, {
+    const response = await fetch(`https://presentation-day-1-888bike-sigma.vercel.app/api/v1/companies/${cid}/appointments`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
