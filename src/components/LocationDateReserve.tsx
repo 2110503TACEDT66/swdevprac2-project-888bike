@@ -18,14 +18,11 @@ export default function LocationDateAndTimeReserve({onDateTimeChange}: {onDateTi
     // Handle changing both date and time
     const handleDateTimeChange = (newValue: Dayjs | null, type: 'date' | 'time') => {
         if (type === 'date') {
-            // setReserveDate(newValue.toISOString());
-            const newDate = newValue?.toISOString();
+            const newDate = newValue?.toISOString() || '';
             setReserveDate(newDate);
-            // console.log('newValue', newValue?.toISOString())
             console.log('reserveDate', reserveDate);
         } else {
-            // setReserveTime(newValue.toISOString());
-            const newTime = newValue?.toISOString();
+            const newTime = newValue?.toISOString() || '';
             setReserveTime(newTime);
             console.log('reserveTime', reserveTime);
         }
@@ -44,15 +41,12 @@ export default function LocationDateAndTimeReserve({onDateTimeChange}: {onDateTi
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <br></br>
                 <DatePicker
-                className="mt-2"
-                    // value={reserveDate}
+                    className="mt-2"
                     onChange={(newValue) => handleDateTimeChange(newValue, 'date')}
-                    renderInput={(params) => <TextField {...params} />}
                 />
                 <TimePicker
-                    // value={reserveTime}
                     onChange={(newValue) => handleDateTimeChange(newValue, 'time')}
-                    renderInput={(params) => <TextField {...params} />}
+                    // renderInput={(params) => <TextField {...params} />}
                 />
             </LocalizationProvider>
 
