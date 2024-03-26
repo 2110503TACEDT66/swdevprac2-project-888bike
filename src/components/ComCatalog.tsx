@@ -1,8 +1,21 @@
 //import Productcard from '@/components/ProductCard';
 import Link from 'next/link';
 
+interface Company {
+    id: string;
+    name: string;
+    address: string;
+    website: string;
+    description: string;
+    tel: string;
+}
 
-export default async function ComCatalog({ ComJson }: { ComJson: Object }) {
+interface CompanyData {
+    count: number;
+    data: Company[];
+}
+
+export default async function ComCatalog({ ComJson }: { ComJson: CompanyData }) {
     const ComJsonReady = await ComJson
 
     return (
@@ -10,7 +23,7 @@ export default async function ComCatalog({ ComJson }: { ComJson: Object }) {
             <div className='text-center'>there are {ComJsonReady.count} companies</div>
             <div style={{ margin: "20px", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-around", alignContent: "space-around", padding: "10px" }}>
                 {
-                    ComJsonReady.data.map((ComItem: object) => (
+                    ComJsonReady.data.map((ComItem: Company) => (
                         <Link href={`/booking?cid=${ComItem.id}&company=${ComItem.name}`} className='w-1/5'>
                             <div className='flex flex-col items-start justify-center bg-slate-600 rounded-lg p-5 m-5'>
                                 <div className="">

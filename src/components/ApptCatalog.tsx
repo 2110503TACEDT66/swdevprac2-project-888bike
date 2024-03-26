@@ -1,8 +1,25 @@
 //import Productcard from '@/components/ProductCard';
 import Link from 'next/link';
+interface ApptItem {
+    id: string;
+    company: {
+        name: string;
+        address: string;
+        description: string;
+        tel: string;
+        website: string;
+    };
+    apptDate: string;
+    user: string;
+}
 
+// Define the structure of the ApptJson object
+interface ApptJson {
+    count: number;
+    data: ApptItem[];
+}
 
-export default async function ApptCatalog({ ApptJson }: { ApptJson: Object }) {
+export default async function ApptCatalog({ ApptJson }: { ApptJson: Promise<ApptJson> }) {
     const ApptJsonReady = await ApptJson
 
     return (
@@ -10,7 +27,7 @@ export default async function ApptCatalog({ ApptJson }: { ApptJson: Object }) {
             there are {ApptJsonReady.count} appointments
             <div style={{ margin: "20px", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-around", alignContent: "space-around", padding: "10px" }}>
                 {
-                    ApptJsonReady.data.map((ApptItem: object) => (
+                    ApptJsonReady.data.map((ApptItem: ApptItem) => (
                         <Link href={`/appointments/manage?&aid=${ApptItem.id}&company=${ApptItem.company.name}`} className='w-1/3'>
                             {/* {JSON.stringify(ApptItem)}  */}
                             <div className='flex flex-col items-start justify-center bg-slate-600 rounded-lg p-5 m-5'>
