@@ -20,9 +20,9 @@ export default async function RootLayout({children,} : { children: React.ReactNo
       <body className={inter.className}>
         <NextAuthProvider session={session}>
           <TopMenu/>
-          {children}
+          <div className='pt-[45px]'>{children}</div> 
         </NextAuthProvider>
-          <div className='pt-[45px]'>{children}</div>   
+            
         {/* </NextAuthProvider> */}
       </body>
     </html>
