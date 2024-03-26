@@ -5,9 +5,12 @@ import getadminAppts from "@/libs/getadminAppts";
 import { Suspense } from "react";
 import { LinearProgress } from "@mui/material";
 
+
 const adminappt = getadminAppts()
 
+
 export default function adminApptpage(){
+
     return (
         <main>
             <Suspense fallback={<p>Loading ... <LinearProgress/></p>}>

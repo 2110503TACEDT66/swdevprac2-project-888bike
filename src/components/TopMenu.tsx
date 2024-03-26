@@ -1,11 +1,20 @@
 import Link from "next/link";
 import TopMenuItem from "./TopMenuItem";
 import Image from "next/image";
-// import { getServerSession } from "next-auth";
-// import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+
+
+// import { getServerSession } from "next-auth"
+// import { authOptions } from "@/app/api/auth/[...nextauth]/route"
+// import getUserProfile from "@/libs/getUserProfile"
+
 
 export default async function TopMenu () {
-  // const session = await getServerSession(authOptions)
+    // const session = await getServerSession(authOptions)
+
+    // if(!session || !session.user.token) return null
+
+    // const profile = await getUserProfile(session.user.token)
+
   return (
     <div className="h-[45px] w-screen flex flex-row items-center justify-between bg-slate-200 fixed">
         <div className="ml-5">
