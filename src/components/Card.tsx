@@ -2,30 +2,44 @@ import Image from 'next/image'
 import '../../interface'
 import InteractiveCard from './InteractiveCard'
 
-export default function Card ({hospitalItem} : { hospitalItem: HospitalItem}) {
+interface CompanyItem {
+  name: string
+  address: string
+  website: string
+  description: string
+  tel: string
+}
+
+export default function Card ({CompanyItem} : { CompanyItem: CompanyItem}) {
   return (
-    <InteractiveCard>
-        <div className='h-2/4 relative'>
-            <Image 
-                src={hospitalItem.picture} 
-                alt='Product Picture'
-                fill={true}
-                objectFit='cover'
-            />
-        </div>
-        <div className='flex flex-col items-center'>
-            <h3 className='font-semibold mt-3'>{hospitalItem.name}</h3>
-            <div className='text-gray-500 text-sm ml-2 mt-3'>
-              <p>Address: {hospitalItem.address}</p>
-              <p>District: {hospitalItem.district}</p>
-              <p>Province: {hospitalItem.province}</p>
-              <p>Postal Code: {hospitalItem.postalcode}</p>
-              <p>Tel: {hospitalItem.tel}</p>
-              <p>ID: {hospitalItem.id}</p>
-              <p>_ID: {hospitalItem._id}</p>
-              <p>__V: {hospitalItem.__v}</p>
-            </div>
-        </div>
-    </InteractiveCard>
+    // <InteractiveCard contentName={CompanyName}>
+    //         <Image src={imgSrc}
+    //         alt={hospitalName}
+    //         width={600}
+    //         height={400}
+    //         className='object-cover rounded-t-lg'
+    //         />
+    //         <div className='flex flex-col items-center justify-center'>
+    //             <div className="pt-5 mb-3">
+    //                 <h5 className=" text-xl font-bold tracking-tight text-white">{hospitalName}</h5>
+    //             </div>
+    //             {
+    //                 onRating?
+    //                 <Rating
+    //                     className='mb-5'
+    //                     id={hospitalName + " Rating"}
+    //                     name={hospitalName + " Rating"}
+    //                     data-testid={hospitalName + " Rating"}
+    //                     value={rating}
+    //                     precision={0.5}
+    //                     onChange={(event, newValue) => {
+    //                         event.stopPropagation(); event.nativeEvent.stopImmediatePropagation(); handleRatingChange(newValue as number)
+    //                     }}
+    //                     onClick={(event) => event.stopPropagation()}
+    //                     emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+    //                 />: ''
+    //             }
+    //         </div>
+    //     </InteractiveCard>
   )
 }

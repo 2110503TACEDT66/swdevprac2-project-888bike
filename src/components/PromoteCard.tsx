@@ -15,13 +15,13 @@ export default function PromoteCard () {
         listener: handleContextMenu
     })
     return (
-        <div className="flex flex-row m-3">
+        <div className="flex flex-row m-3 h-[300px]">
             <div className="w-1/2">
                 <VideoPlayer vdoSrc="/video.mp4" isPlaying={playing}/>
             </div>
             
             <div className="flex flex-col ml-3 items-start">
-                <h2>Get your vaccine today.</h2>
+                <h2>search your ideal job today</h2>
                 <button 
                     className="py-1 px-5 bg-red-300 rounded-lg mt-5"
                     onClick={() => {

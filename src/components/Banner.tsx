@@ -10,7 +10,7 @@ export default function Banner() {
       '/cover2.png',
       '/cover3.jpg'
     ]
-    const [index, setIndex] = useState(0)
+    const [index, setIndex] = useState(2)
     const router = useRouter();
 
     // const { data: session } = useSession()
@@ -19,25 +19,23 @@ export default function Banner() {
     return (
       //add top shadow
       <div 
-        className='flex w-full h-[250px] relative justify-center items-center' 
+        className='flex w-full h-[500px] relative justify-center items-center' 
         onClick={()=>{setIndex(index+1)}}>
           
           <div className='flex flex-col justify-center z-10 absolute text-white drop-shadow-xl items-center'>
-              <h1 className="font-bold">Vaccine Service Center</h1>
-              <a className="font-medium hover:underline hover:cursor-pointer" href="/booking">จองฉีดวัคซีนได้แล้ววันนี้</a>
+              <h1 className="text-7xl font-bold">Online Job Fair</h1>
+              <a className="text-xl font-medium hover:underline hover:cursor-pointer" href="/booking/admin">10 - 13 May 2022</a>
           </div>
           {
             // session ? <div className='absolute top-0 right-0 z-10 mt-2 mr-5 text-white'>Welcome {session.user?.name}</div> : null
           }
           <div className='absolute bottom-0 right-0 z-10 mb-2 mr-2'>
             <button 
-              className="bg-white text-black py-1 px-3 rounded-lg hover:cursor-pointer" 
-              onClick={(e) => {
-                router.push('/hospital')
-                e.stopPropagation()
-              }}
-            >
-              Select Hospital
+              className='bg-white text-cyan-600 border-cyan-600
+              font-semibold py-2 px-2 m-2 rounded z-30 absolute bottom-0 right-0
+              hover:bg-cyan-600 hover:text-white hover:border-transparent'
+              onClick={(e)=>{router.push('/company');e.stopPropagation()}}>
+              Select Company
             </button>
           </div>
           <Image 
