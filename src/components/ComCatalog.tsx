@@ -15,7 +15,7 @@ interface CompanyData {
     data: Company[];
 }
 
-export default async function ComCatalog({ ComJson }: { ComJson: CompanyData }) {
+export default async function ComCatalog({ ComJson }: { ComJson: Promise<CompanyData> }) {
     const ComJsonReady = await ComJson
 
     return (
