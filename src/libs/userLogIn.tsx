@@ -32,6 +32,6 @@ export default async function userLogIn (userEmail: string, userPassword: string
     const uid = userData.data._id;
     console.log(uid);
 
-    
+    window.location.href = '/';
     return {data, uid};
 }
