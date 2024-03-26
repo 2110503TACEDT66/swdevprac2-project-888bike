@@ -16,7 +16,7 @@ export default async function userLogIn (userEmail: string, userPassword: string
     console.log(data);
     const token = 'Bearer ' + data.token; // Assuming the token is returned as 'token'
     console.log(token);
-    const me = await fetch('http://localhost:5001/api/v1/auth/me', {
+    const me = await fetch('https://presentation-day-1-888bike-sigma.vercel.app/api/v1/auth/me', {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
