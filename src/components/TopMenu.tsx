@@ -20,7 +20,7 @@ export default async function TopMenu () {
           } */}
         </div>
         <div className="flex flex-row items-center  gap-x-10">
-          <TopMenuItem name='Booking' pageRef="/booking"/>
+          <TopMenuItem name='Booking' pageRef="/booking/admin"/>
           <Link href="/">
             {/* <Image 
                 src={'/img/logo.png'}
