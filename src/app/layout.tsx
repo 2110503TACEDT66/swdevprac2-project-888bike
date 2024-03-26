@@ -22,7 +22,8 @@ export default async function RootLayout({children,} : { children: React.ReactNo
           <TopMenu/>
           {children}
         </NextAuthProvider>
-        
+          <div className='pt-[45px]'>{children}</div>   
+        {/* </NextAuthProvider> */}
       </body>
     </html>
   )
