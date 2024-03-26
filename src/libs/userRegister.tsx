@@ -18,6 +18,6 @@ export default async function userRegister(userRegisterData: RegisterJson, role:
     if(!response.ok) {
         throw new Error('Failed to register')
     }
-
+    window.location.href = '/';
     return await response.json()
 }
