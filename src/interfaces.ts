@@ -8,4 +8,15 @@ export interface ReservationItem {
     returnLocation:string
 }
 
+export interface CompanyItem {
+    name: string
+    address: string
+    website: string
+    description: string
+    tel: string
+}
+
+
+
+
 
