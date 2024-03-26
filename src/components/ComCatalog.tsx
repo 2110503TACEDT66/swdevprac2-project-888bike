@@ -11,7 +11,7 @@ export default async function ComCatalog({ ComJson }: { ComJson: Object }) {
             <div style={{ margin: "20px", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-around", alignContent: "space-around", padding: "10px" }}>
                 {
                     ComJsonReady.data.map((ComItem: object) => (
-                        <Link href={`/booking/user?cid=${ComItem.id}&company=${ComItem.name}`} className='w-1/5'>
+                        <Link href={`/booking?cid=${ComItem.id}&company=${ComItem.name}`} className='w-1/5'>
                             <div className='flex flex-col items-start justify-center bg-slate-600 rounded-lg p-5 m-5'>
                                 <div className="">
                                     <h5 className=" text-xl font-bold tracking-tight text-white">

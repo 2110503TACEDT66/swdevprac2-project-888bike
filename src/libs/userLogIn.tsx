@@ -12,6 +12,26 @@ export default async function userLogIn (userEmail: string, userPassword: string
     if(!response.ok) {
         throw new Error('Failed to fetch cars')
     }
+    const data = await response.json();
+    console.log(data);
+    const token = 'Bearer ' + data.token; // Assuming the token is returned as 'token'
+    console.log(token);
+    const me = await fetch('http://localhost:5001/api/v1/auth/me', {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token
+        },
+    })
+    if (!me.ok) {
+        throw new Error('Failed to get user')
+    }
+    const userData = await me.json();
+    console.log(userData);
+    console.log(userData.data._id);
+    const uid = userData.data._id;
+    console.log(uid);
 
-    return await response.json()
+    
+    return {data, uid};
 }
