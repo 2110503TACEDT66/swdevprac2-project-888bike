@@ -38,7 +38,7 @@ export default function Reservations () {
 
     return (
         <main className="w-[100%] flex flex-col items-center space-y-4">
-            <div className="text-xl font-medium">New Reservation</div>
+            <div className="text-xl font-medium">New Booking</div>
             <div className="text-xl font-medium">Company : {model}</div>
 
             <div className="w-fit space-y-2">

@@ -7,7 +7,7 @@ export default async function ComCatalog({ComJson}: {ComJson:Object}) {
 
     return (
         <>
-            there are {ComJsonReady.count} ... companies
+            <div className='text-center'>there are {ComJsonReady.count} companies</div>
             <div style={{margin:"20px",display:"flex",flexDirection:"row", flexWrap:"wrap", justifyContent:"space-around", alignContent:"space-around", padding:"10px"}}>
                 {
                     ComJsonReady.data.map((ComItem:object)=>(

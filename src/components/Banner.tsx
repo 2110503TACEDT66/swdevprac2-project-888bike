@@ -23,7 +23,7 @@ export default function Banner() {
         onClick={()=>{setIndex(index+1)}}>
           
           <div className='flex flex-col justify-center z-10 absolute text-white drop-shadow-xl items-center'>
-              <h1 className="text-7xl font-bold">Get Hired</h1>
+              <h1 className="text-7xl font-bold">Online Job Fair</h1>
               <a className="text-xl font-medium hover:underline hover:cursor-pointer" href="/booking/admin">10 - 13 May 2022</a>
           </div>
           {
@@ -31,12 +31,10 @@ export default function Banner() {
           }
           <div className='absolute bottom-0 right-0 z-10 mb-2 mr-2'>
             <button 
-              className="bg-white text-black py-1 px-3 rounded-lg hover:cursor-pointer" 
-              onClick={(e) => {
-                router.push('/company')
-                e.stopPropagation()
-              }}
-            >
+              className='bg-white text-cyan-600 border-cyan-600
+              font-semibold py-2 px-2 m-2 rounded z-30 absolute bottom-0 right-0
+              hover:bg-cyan-600 hover:text-white hover:border-transparent'
+              onClick={(e)=>{router.push('/company');e.stopPropagation()}}>
               Select Company
             </button>
           </div>

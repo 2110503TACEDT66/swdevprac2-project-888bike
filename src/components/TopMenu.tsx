@@ -7,7 +7,7 @@ import Image from "next/image";
 export default async function TopMenu () {
   // const session = await getServerSession(authOptions)
   return (
-    <div className="h-[45px] w-screen flex flex-row items-center justify-between">
+    <div className="h-[45px] w-screen flex flex-row items-center justify-between bg-slate-200 fixed">
         <div className="ml-5">
           {/* {
             session ? 
@@ -19,7 +19,8 @@ export default async function TopMenu () {
               </Link>
           } */}
         </div>
-        <div className="flex flex-row items-center  gap-x-10">
+        <div className="flex flex-row items-right  gap-x-10">
+          <TopMenuItem name='appointments' pageRef="/appointments/admin"/>
           <TopMenuItem name='Booking' pageRef="/booking/admin"/>
           <Link href="/">
             {/* <Image 
