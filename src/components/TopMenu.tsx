@@ -8,18 +8,9 @@ export default async function TopMenu () {
   const session = await getServerSession(authOptions)
   return (
     <div className="h-[45px] w-screen flex flex-row items-center justify-between bg-slate-200 fixed">
-        <div className="ml-5">
-          {
-            session ? 
-              <Link href='/api/auth/signout'>
-                Sign Out
-              </Link>
-            : <Link href='/api/auth/signin'>
-                Sign In
-              </Link>
-          }
-        </div>
-        <div className="flex flex-row items-right  gap-x-10">
+        
+        <div className="flex flex-row items-right  gap-x-6 ml-5">
+          <TopMenuItem name='Home' pageRef="/"/>
           <TopMenuItem name='Companies' pageRef="/company"/>
           <TopMenuItem name='Appointments' pageRef="/appointments"/>
           <Link href="/">
@@ -33,6 +24,19 @@ export default async function TopMenu () {
           </Link>
         </div>
         
+        <div className="mr-10">
+          {
+            session ? 
+              <Link href='/api/auth/signout'
+              className="hover:underline hover:text-red-800 rounded-md bg-red-100 hover:bg-red-300 p-2">
+                Sign Out
+              </Link>
+            : <Link href='/api/auth/signin'
+            className="hover:underline hover:text-blue-700 rounded-md bg-blue-100 hover:bg-blue-300 p-2">
+                Sign In
+              </Link>
+          }
+        </div>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import { RegisterJson, Role } from '../../interface'
 
 export default async function userRegister(userRegisterData: RegisterJson, role: Role) {
-    const response = await fetch('https://presentation-day-1-888bike-sigma.vercel.app/api/v1/auth/register', {
+    const response = await fetch('http://localhost:5001/api/v1/auth/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

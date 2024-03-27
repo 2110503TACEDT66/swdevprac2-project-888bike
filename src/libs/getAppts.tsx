@@ -1,6 +1,6 @@
 export default async function getAppts (token: string) {
     // await new Promise((resolve)=>setTimeout(resolve,5000))
-    const response = await fetch(`https://presentation-day-1-888bike-sigma.vercel.app/api/v1/appointments`, {
+    const response = await fetch(`http://localhost:5001/api/v1/appointments`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',

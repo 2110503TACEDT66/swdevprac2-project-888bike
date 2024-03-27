@@ -1,5 +1,5 @@
 export default async function deleteAppt (token: string, aid:string) {
-    const response = await fetch(`https://presentation-day-1-888bike-sigma.vercel.app/api/v1/appointments/${aid}`, {
+    const response = await fetch(`http://localhost:5001/api/v1/appointments/${aid}`, {
         method: "DELETE",
         headers: {
             'Content-Type': 'application/json',

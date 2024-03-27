@@ -1,5 +1,5 @@
 export default async function addAppt (uid: string, cid: string, apptDate: string, token: string) {
-    const response = await fetch(`https://presentation-day-1-888bike-sigma.vercel.app/api/v1/companies/${cid}/appointments`, {
+    const response = await fetch(`http://localhost:5001/api/v1/companies/${cid}/appointments`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
@@ -11,7 +11,7 @@ export default async function addAppt (uid: string, cid: string, apptDate: strin
         }),
     })
     if(!response.ok) {
-        alert('Failed to add appointment')
+        alert('This user already have 3 Appointments!')
         throw new Error('Failed to add appointment')
         
     }
